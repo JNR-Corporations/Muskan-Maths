@@ -1,29 +1,236 @@
-const CACHE_NAME = "muskans-math-cache-v1";
-const ASSETS_TO_CACHE = [
-  "./",
-  "./index.html",
-  "./manifest.json",
-  "https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Quicksand:wght@400;600;700&display=swap",
-  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+const CACHE_VERSION = "v2.0.0";
+
+const STATIC_CACHE = `muskan-static-${CACHE_VERSION}`;
+const DYNAMIC_CACHE = `muskan-dynamic-${CACHE_VERSION}`;
+
+const STATIC_FILES = [
+    "./",
+    "./index.html",
+    "./manifest.json",
+
+    "./logo192.png",
+    "./logo512.png",
+    "./logo512-maskable.png"
 ];
 
-// Cache core assets on install
-self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(ASSETS_TO_CACHE);
-    })
-  );
+// INSTALL
+self.addEventListener("install", event => {
+
+    self.skipWaiting();
+
+    event.waitUntil(
+        caches.open(STATIC_CACHE)
+        .then(cache => cache.addAll(STATIC_FILES))
+    );
+
 });
 
-// Cache-First strategy for fast offline performance
-self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-      return fetch(event.request);
-    })
-  );
+// ACTIVATE
+self.addEventListener("activate", event => {
+
+    event.waitUntil(
+
+        caches.keys().then(keys => {
+
+            return Promise.all(
+
+                keys
+                .filter(key =>
+                    key !== STATIC_CACHE &&
+                    key !== DYNAMIC_CACHE
+                )
+                .map(key => caches.delete(key))
+
+            );
+
+        })
+
+    );
+
+    self.clients.claim();
+
+});
+
+// FETCH
+self.addEventListener("fetch", event => {
+
+    if (event.request.method !== "GET") return;
+
+    const url = new URL(event.request.url);
+
+    // HTML
+    if (event.request.mode === "navigate") {
+
+        event.respondWith(
+
+            fetch(event.request)
+            .then(response => {
+
+                const copy = response.clone();
+
+                caches.open(DYNAMIC_CACHE)
+                .then(cache => cache.put(event.request, copy));
+
+                return response;
+
+            })
+            .catch(() => {
+
+                return caches.match(event.request)
+                .then(cache => {
+
+                    return cache || caches.match("./index.html");
+
+                });
+
+            })
+
+        );
+
+        return;
+
+    }
+
+    // Fonts
+    if (
+        url.origin.includes("fonts.googleapis.com") ||
+        url.origin.includes("fonts.gstatic.com")
+    ) {
+
+        event.respondWith(
+
+            caches.match(event.request)
+            .then(cache => {
+
+                return cache || fetch(event.request)
+                .then(response => {
+
+                    const copy = response.clone();
+
+                    caches.open(DYNAMIC_CACHE)
+                    .then(c => c.put(event.request, copy));
+
+                    return response;
+
+                });
+
+            })
+
+        );
+
+        return;
+
+    }
+
+    // FontAwesome CDN
+    if (
+        url.origin.includes("cdnjs.cloudflare.com")
+    ) {
+
+        event.respondWith(
+
+            caches.match(event.request)
+            .then(cache => {
+
+                return cache || fetch(event.request)
+                .then(response => {
+
+                    const copy = response.clone();
+
+                    caches.open(DYNAMIC_CACHE)
+                    .then(c => c.put(event.request, copy));
+
+                    return response;
+
+                });
+
+            })
+
+        );
+
+        return;
+
+    }
+
+    // Images
+    if (
+        event.request.destination === "image"
+    ) {
+
+        event.respondWith(
+
+            caches.match(event.request)
+            .then(cache => {
+
+                return cache || fetch(event.request)
+                .then(response => {
+
+                    const copy = response.clone();
+
+                    caches.open(DYNAMIC_CACHE)
+                    .then(c => c.put(event.request, copy));
+
+                    return response;
+
+                });
+
+            })
+
+        );
+
+        return;
+
+    }
+
+    // CSS / JS
+    if (
+        event.request.destination === "script" ||
+        event.request.destination === "style"
+    ) {
+
+        event.respondWith(
+
+            caches.match(event.request)
+            .then(cache => {
+
+                return cache || fetch(event.request)
+                .then(response => {
+
+                    const copy = response.clone();
+
+                    caches.open(DYNAMIC_CACHE)
+                    .then(c => c.put(event.request, copy));
+
+                    return response;
+
+                });
+
+            })
+
+        );
+
+        return;
+
+    }
+
+    // Default
+    event.respondWith(
+
+        fetch(event.request)
+        .catch(() => caches.match(event.request))
+
+    );
+
+});
+
+// MESSAGE
+
+self.addEventListener("message", event => {
+
+    if (event.data === "SKIP_WAITING") {
+
+        self.skipWaiting();
+
+    }
+
 });

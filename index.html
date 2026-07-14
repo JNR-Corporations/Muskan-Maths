@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Muskan's Maths</title>
     <!-- Premium Rounded Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap"
+        rel="stylesheet">
     <!-- FontAwesome for Flat Solid Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FF4D6D">
+
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <meta name="apple-mobile-web-app-title" content="Muskan's Maths">
+
+    <meta name="application-name" content="Muskan's Maths">
+
+    <meta name="msapplication-TileColor" content="#FF4D6D">
+
+    <meta name="color-scheme" content="light">
+
+    <link rel="apple-touch-icon" href="logo192.png">
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
@@ -167,8 +187,15 @@
         }
 
         @keyframes renderFade {
-            from { opacity: 0; transform: translateY(12px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Grid Framework for Chapters UI */
@@ -310,7 +337,8 @@
             letter-spacing: 0.5px;
         }
 
-        .formula-equation-badge sub, .formula-equation-badge sup {
+        .formula-equation-badge sub,
+        .formula-equation-badge sup {
             font-size: 11px;
         }
 
@@ -472,8 +500,15 @@
         }
 
         @keyframes bounceScaleLogo {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-12px) scale(1.04); }
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-12px) scale(1.04);
+            }
         }
 
         .loader-ripple-ring {
@@ -487,8 +522,15 @@
         }
 
         @keyframes outwardRipple {
-            0% { transform: scale(0.75); opacity: 1; }
-            100% { transform: scale(1.35); opacity: 0; }
+            0% {
+                transform: scale(0.75);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1.35);
+                opacity: 0;
+            }
         }
 
         .immersive-loading-modal p {
@@ -561,11 +603,19 @@
 
         /* Slide up animation for PWA Prompt */
         @keyframes slideUpPrompt {
-            from { opacity: 0; transform: translateY(25px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Main Shell Mockup Frame -->
@@ -589,7 +639,8 @@
                         <circle cx="36" cy="38" r="6.5" fill="#FFFFFF" />
                         <circle cx="64" cy="38" r="6.5" fill="#FFFFFF" />
                         <!-- Smooth Parabolic Smile Line -->
-                        <path d="M 26 56 Q 50 82 74 56" stroke="#FFFFFF" stroke-width="7.5" stroke-linecap="round" fill="none" />
+                        <path d="M 26 56 Q 50 82 74 56" stroke="#FFFFFF" stroke-width="7.5" stroke-linecap="round"
+                            fill="none" />
                         <circle cx="38" cy="36" r="2.2" fill="#FF4D6D" />
                         <circle cx="66" cy="36" r="2.2" fill="#FF4D6D" />
                     </svg>
@@ -604,7 +655,8 @@
             <div id="view-chapters" class="app-view active-view">
                 <div class="welcome-card">
                     <h2>Hello Muskan! 👋</h2>
-                    <p>Ready to master your Class 9th equations? Explore all 12 core NCERT chapters cleanly conceptualized for high-scoring ease.</p>
+                    <p>Ready to master your Class 9th equations? Explore all 12 core NCERT chapters cleanly
+                        conceptualized for high-scoring ease.</p>
                 </div>
                 <div class="section-headline"><i class="fa-solid fa-folder-open"></i> Course Chapters</div>
                 <div class="grid-layout-stack" id="chapters-injection-point">
@@ -616,7 +668,8 @@
             <div id="view-formulas" class="app-view">
                 <div class="welcome-card" style="background: linear-gradient(135deg, #FFB3C1, #FF758F);">
                     <h2>Formula Vault 📐</h2>
-                    <p>Tap any chapter folder card below to unlock its underlying core equations with comprehensive solved examples instantly.</p>
+                    <p>Tap any chapter folder card below to unlock its underlying core equations with comprehensive
+                        solved examples instantly.</p>
                 </div>
                 <div class="section-headline"><i class="fa-solid fa-square-root-variable"></i> Chapter Formulas</div>
                 <div id="formulas-accordion-injection-point">
@@ -632,22 +685,27 @@
                     </div>
                     <div class="dev-badge-title">App Design by <span class="name-glow">Muskan</span></div>
                     <div class="dev-tagline">Lead UI Architect & Creator</div>
-                    
+
                     <div class="academic-summary-block" style="width: 100%; text-align: left;">
-                        <h4 style="color: #2ec4b6;"><i class="fa-solid fa-wand-magic-sparkles"></i> Visual Retention Strategy</h4>
-                        <p>Mapping complex equations with clean spatial formatting enables high recall efficiency under exam conditions. Try rewriting formulas once a week!</p>
+                        <h4 style="color: #2ec4b6;"><i class="fa-solid fa-wand-magic-sparkles"></i> Visual Retention
+                            Strategy</h4>
+                        <p>Mapping complex equations with clean spatial formatting enables high recall efficiency under
+                            exam conditions. Try rewriting formulas once a week!</p>
                     </div>
-                    
+
                     <div class="academic-summary-block" style="width: 100%; text-align: left;">
-                        <h4 style="color: #ff9f1c;"><i class="fa-solid fa-mobile-screen-button"></i> App Design Mandate</h4>
-                        <p>Built intentionally with light-weight cross-platform architectures ensuring no clipped cards, edge-to-edge adaptive viewports, and zero clutter interfaces.</p>
+                        <h4 style="color: #ff9f1c;"><i class="fa-solid fa-mobile-screen-button"></i> App Design Mandate
+                        </h4>
+                        <p>Built intentionally with light-weight cross-platform architectures ensuring no clipped cards,
+                            edge-to-edge adaptive viewports, and zero clutter interfaces.</p>
                     </div>
                 </div>
             </div>
 
             <!-- ISOLATED STANDALONE FULLSCREEN STUDY CONTEXT VIEW -->
             <div id="view-standalone-details" class="fullscreen-detail-mode">
-                <button class="back-navigator-action" onclick="unmountDetailContext()"><i class="fa-solid fa-arrow-left-long"></i> Back to Dashboard</button>
+                <button class="back-navigator-action" onclick="unmountDetailContext()"><i
+                        class="fa-solid fa-arrow-left-long"></i> Back to Dashboard</button>
                 <div id="standalone-detail-injection-point">
                     <!-- Dynamic Chapter Summary Elements -->
                 </div>
@@ -663,7 +721,8 @@
                     <rect x="10" y="10" width="80" height="80" rx="24" fill="url(#pinkGlowGrad)" />
                     <circle cx="36" cy="38" r="6.5" fill="#FFFFFF" />
                     <circle cx="64" cy="38" r="6.5" fill="#FFFFFF" />
-                    <path d="M 26 56 Q 50 82 74 56" stroke="#FFFFFF" stroke-width="7.5" stroke-linecap="round" fill="none" />
+                    <path d="M 26 56 Q 50 82 74 56" stroke="#FFFFFF" stroke-width="7.5" stroke-linecap="round"
+                        fill="none" />
                 </svg>
             </div>
             <p id="processing-status-label">Simplifying Equations...</p>
@@ -686,19 +745,26 @@
         </div>
 
         <!-- Custom Claymorphic PWA Install Prompt -->
-        <div id="pwa-install-modal" style="display: none; position: absolute; bottom: 90px; left: 5%; width: 90%; background: #FFFFFF; border-radius: 24px; padding: 18px; box-shadow: var(--clay-shadow-flat), inset 4px 4px 8px #FFFFFF; border: 2px solid var(--clay-pink-soft); z-index: 99; align-items: center; justify-content: space-between; gap: 12px; animation: slideUpPrompt 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+        <div id="pwa-install-modal"
+            style="display: none; position: absolute; bottom: 90px; left: 5%; width: 90%; background: #FFFFFF; border-radius: 24px; padding: 18px; box-shadow: var(--clay-shadow-flat), inset 4px 4px 8px #FFFFFF; border: 2px solid var(--clay-pink-soft); z-index: 99; align-items: center; justify-content: space-between; gap: 12px; animation: slideUpPrompt 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
             <div style="display: flex; align-items: center; gap: 12px;">
-                <div style="width: 46px; height: 46px; background: var(--clay-pink-soft); border-radius: 14px; display: flex; justify-content: center; align-items: center; box-shadow: var(--clay-shadow-pressed);">
+                <div
+                    style="width: 46px; height: 46px; background: var(--clay-pink-soft); border-radius: 14px; display: flex; justify-content: center; align-items: center; box-shadow: var(--clay-shadow-pressed);">
                     <i class="fa-solid fa-cloud-arrow-down" style="color: var(--clay-pink-dark); font-size: 18px;"></i>
                 </div>
                 <div>
-                    <h4 style="font-family: 'Fredoka', sans-serif; font-size: 14px; color: var(--text-dark); font-weight: 600;">Install App!</h4>
-                    <p style="font-size: 11px; color: var(--text-muted); font-weight: 500;">Add Muskan's Maths to your home screen</p>
+                    <h4
+                        style="font-family: 'Fredoka', sans-serif; font-size: 14px; color: var(--text-dark); font-weight: 600;">
+                        Install App!</h4>
+                    <p style="font-size: 11px; color: var(--text-muted); font-weight: 500;">Add Muskan's Maths to your
+                        home screen</p>
                 </div>
             </div>
             <div style="display: flex; gap: 8px;">
-                <button id="pwa-close-btn" style="background: #FFFFFF; border: none; padding: 8px 12px; border-radius: 10px; font-weight: 700; font-size: 11px; color: var(--text-muted); cursor: pointer; box-shadow: var(--clay-shadow-flat);">Later</button>
-                <button id="pwa-install-btn" style="background: var(--clay-pink-dark); border: none; padding: 8px 12px; border-radius: 10px; font-weight: 700; font-size: 11px; color: #FFFFFF; cursor: pointer; box-shadow: 0px 6px 15px rgba(255, 77, 109, 0.25);">Install</button>
+                <button id="pwa-close-btn"
+                    style="background: #FFFFFF; border: none; padding: 8px 12px; border-radius: 10px; font-weight: 700; font-size: 11px; color: var(--text-muted); cursor: pointer; box-shadow: var(--clay-shadow-flat);">Later</button>
+                <button id="pwa-install-btn"
+                    style="background: var(--clay-pink-dark); border: none; padding: 8px 12px; border-radius: 10px; font-weight: 700; font-size: 11px; color: #FFFFFF; cursor: pointer; box-shadow: 0px 6px 15px rgba(255, 77, 109, 0.25);">Install</button>
             </div>
         </div>
 
@@ -709,8 +775,9 @@
     <script>
         // High Quality NCERT Syllabus Structural Data Repository
         const ncertChaptersDataset = [
-            { id: 1, icon: "fa-calculator", title: "Number Systems", subtitle: "Core Foundations",
-              body: `
+            {
+                id: 1, icon: "fa-calculator", title: "Number Systems", subtitle: "Core Foundations",
+                body: `
                 <div class="academic-summary-block">
                     <h4><i class="fa-solid fa-circle-check"></i> Concept Breakdown</h4>
                     <p>Study of rational numbers, irrational expansions, and numbers representation on real geometric axis systems.</p>
@@ -720,133 +787,144 @@
                     <p>Numbers structurally expressible as <b>p/q</b> form where both components represent integers and denominator q &ne; 0.</p>
                 </div>
               `,
-              formulas: [
-                { name: "Exponent Addition Law", eq: "a<sup>p</sup> &bull; a<sup>q</sup> = a<sup>p+q</sup>", q: "Simplify: 5<sup>2</sup> &bull; 5<sup>4</sup>", sol: "5<sup>2+4</sup> = 5<sup>6</sup> = 15,625" },
-                { name: "Exponent Power Law", eq: "(a<sup>p</sup>)<sup>q</sup> = a<sup>pq</sup>", q: "Simplify: (2<sup>3</sup>)<sup>2</sup>", sol: "2<sup>3&bull;2</sup> = 2<sup>6</sup> = 64" }
-              ]
+                formulas: [
+                    { name: "Exponent Addition Law", eq: "a<sup>p</sup> &bull; a<sup>q</sup> = a<sup>p+q</sup>", q: "Simplify: 5<sup>2</sup> &bull; 5<sup>4</sup>", sol: "5<sup>2+4</sup> = 5<sup>6</sup> = 15,625" },
+                    { name: "Exponent Power Law", eq: "(a<sup>p</sup>)<sup>q</sup> = a<sup>pq</sup>", q: "Simplify: (2<sup>3</sup>)<sup>2</sup>", sol: "2<sup>3&bull;2</sup> = 2<sup>6</sup> = 64" }
+                ]
             },
-            { id: 2, icon: "fa-trowel-bricks", title: "Polynomials", subtitle: "Algebraic Layouts",
-              body: `
+            {
+                id: 2, icon: "fa-trowel-bricks", title: "Polynomials", subtitle: "Algebraic Layouts",
+                body: `
                 <div class="academic-summary-block">
                     <h4><i class="fa-solid fa-circle-check"></i> Concept Breakdown</h4>
                     <p>Analysis of variable chains with single integer non-negative power architectures along with dynamic factorization theorems.</p>
                 </div>
               `,
-              formulas: [
-                { name: "Sum Square Identity", eq: "(x + y)<sup>2</sup> = x<sup>2</sup> + 2xy + y<sup>2</sup>", q: "Expand: (3a + 2b)<sup>2</sup>", sol: "(3a)<sup>2</sup> + 2(3a)(2b) + (2b)<sup>2</sup> = 9a<sup>2</sup> + 12ab + 4b<sup>2</sup>" },
-                { name: "Square Difference Identity", eq: "x<sup>2</sup> - y<sup>2</sup> = (x - y)(x + y)", q: "Factorize completely: 9m<sup>2</sup> - 25", sol: "(3m)<sup>2</sup> - (5)<sup>2</sup> = (3m - 5)(3m + 5)" }
-              ]
+                formulas: [
+                    { name: "Sum Square Identity", eq: "(x + y)<sup>2</sup> = x<sup>2</sup> + 2xy + y<sup>2</sup>", q: "Expand: (3a + 2b)<sup>2</sup>", sol: "(3a)<sup>2</sup> + 2(3a)(2b) + (2b)<sup>2</sup> = 9a<sup>2</sup> + 12ab + 4b<sup>2</sup>" },
+                    { name: "Square Difference Identity", eq: "x<sup>2</sup> - y<sup>2</sup> = (x - y)(x + y)", q: "Factorize completely: 9m<sup>2</sup> - 25", sol: "(3m)<sup>2</sup> - (5)<sup>2</sup> = (3m - 5)(3m + 5)" }
+                ]
             },
-            { id: 3, icon: "fa-chart-gantt", title: "Coordinate Geometry", subtitle: "Plane Configurations",
-              body: `
+            {
+                id: 3, icon: "fa-chart-gantt", title: "Coordinate Geometry", subtitle: "Plane Configurations",
+                body: `
                 <div class="academic-summary-block">
                     <h4><i class="fa-solid fa-circle-check"></i> Cartesian Grid</h4>
                     <p>Dividing structural dimensions using perpendicular planar lines: horizontal X-axis and vertical Y-axis systems intersecting at point Origin (0,0).</p>
                 </div>
               `,
-              formulas: [
-                { name: "Quadrant Sign Rule", eq: "Q1(+,+), Q2(-,+), Q3(-,-), Q4(+,-)", q: "Identify quadrant locations for points A(-3, 5) and B(4, -2).", sol: "Point A holds a negative abscissa and positive ordinate, falling in Quadrant 2. Point B fits conditions for Quadrant 4." }
-              ]
+                formulas: [
+                    { name: "Quadrant Sign Rule", eq: "Q1(+,+), Q2(-,+), Q3(-,-), Q4(+,-)", q: "Identify quadrant locations for points A(-3, 5) and B(4, -2).", sol: "Point A holds a negative abscissa and positive ordinate, falling in Quadrant 2. Point B fits conditions for Quadrant 4." }
+                ]
             },
-            { id: 4, icon: "fa-arrows-left-right", title: "Linear Equations in Two Variables", subtitle: "Linear Systems",
-              body: `
+            {
+                id: 4, icon: "fa-arrows-left-right", title: "Linear Equations in Two Variables", subtitle: "Linear Systems",
+                body: `
                 <div class="academic-summary-block">
                     <h4><i class="fa-solid fa-circle-check"></i> Linear Equations</h4>
                     <p>Equations formulated matching structure <b>ax + by + c = 0</b> where parameters satisfy constants real parameters and variables hold standard degree 1.</p>
                 </div>
               `,
-              formulas: [
-                { name: "Standard Structural Form", eq: "ax + by + c = 0", q: "Express 3x = 5y - 8 in standard form and find a, b, c values.", sol: "Rearrange all variables to LHS: 3x - 5y + 8 = 0. Comparing to standard form: a = 3, b = -5, c = 8." }
-              ]
+                formulas: [
+                    { name: "Standard Structural Form", eq: "ax + by + c = 0", q: "Express 3x = 5y - 8 in standard form and find a, b, c values.", sol: "Rearrange all variables to LHS: 3x - 5y + 8 = 0. Comparing to standard form: a = 3, b = -5, c = 8." }
+                ]
             },
-            { id: 5, icon: "fa-pen-ruler", title: "Introduction to Euclid's Geometry", subtitle: "Geometric Frameworks",
-              body: `
+            {
+                id: 5, icon: "fa-pen-ruler", title: "Introduction to Euclid's Geometry", subtitle: "Geometric Frameworks",
+                body: `
                 <div class="academic-summary-block">
                     <h4><i class="fa-solid fa-circle-check"></i> Postulates & Axioms</h4>
                     <p>Exploration of fundamental undisputed global assumptions forming structural rules for continuous geometric parameters across proofs.</p>
                 </div>
               `,
-              formulas: [
-                { name: "Euclid's Postulate 1", eq: "Straight line can connect any 2 points.", q: "How many straight lines can cleanly pass through two fixed distinct coordinate points?", sol: "According to Axiom assumptions, exactly one unique distinct straight line can connect two fixed points." }
-              ]
+                formulas: [
+                    { name: "Euclid's Postulate 1", eq: "Straight line can connect any 2 points.", q: "How many straight lines can cleanly pass through two fixed distinct coordinate points?", sol: "According to Axiom assumptions, exactly one unique distinct straight line can connect two fixed points." }
+                ]
             },
-            { id: 6, icon: "fa-square-rss", title: "Lines & Angles", subtitle: "Planar Intersections",
-              body: `
+            {
+                id: 6, icon: "fa-square-rss", title: "Lines & Angles", subtitle: "Planar Intersections",
+                body: `
                 <div class="academic-summary-block">
                     <h4><i class="fa-solid fa-circle-check"></i> Core Geometrics</h4>
                     <p>Analysing lines structural intersection parameters, linear pair conditions, and transversal line behaviors across parallel boundaries.</p>
                 </div>
               `,
-              formulas: [
-                { name: "Linear Pair Relation", eq: "&ang;A + &ang;B = 180&deg;", q: "If two adjacent straight angles form a linear pair and one reads 75&deg;, find the other value.", sol: "&ang;B = 180&deg; - 75&deg; = 105&deg;" }
-              ]
+                formulas: [
+                    { name: "Linear Pair Relation", eq: "&ang;A + &ang;B = 180&deg;", q: "If two adjacent straight angles form a linear pair and one reads 75&deg;, find the other value.", sol: "&ang;B = 180&deg; - 75&deg; = 105&deg;" }
+                ]
             },
-            { id: 7, icon: "fa-triangle-exclamation", title: "Triangles", subtitle: "Congruence Configurations",
-              body: `
+            {
+                id: 7, icon: "fa-triangle-exclamation", title: "Triangles", subtitle: "Congruence Configurations",
+                body: `
                 <div class="academic-summary-block">
                     <h4><i class="fa-solid fa-circle-check"></i> Congruence Criterion</h4>
                     <p>Mathematical exploration establishing perfect clone shapes when corresponding parameters are matched across SAS, ASA, SSS configurations.</p>
                 </div>
               `,
-              formulas: [
-                { name: "Congruence Proof Rule", eq: "SAS, ASA, SSS, RHS Rules Apply", q: "In triangles ABC and PQR, if AB=PQ, &ang;B=&ang;Q, and BC=QR, are they congruent?", sol: "Yes, because two matching side lengths bound an equal internal angle, matching the structural criteria for Side-Angle-Side (SAS) Congruence." }
-              ]
+                formulas: [
+                    { name: "Congruence Proof Rule", eq: "SAS, ASA, SSS, RHS Rules Apply", q: "In triangles ABC and PQR, if AB=PQ, &ang;B=&ang;Q, and BC=QR, are they congruent?", sol: "Yes, because two matching side lengths bound an equal internal angle, matching the structural criteria for Side-Angle-Side (SAS) Congruence." }
+                ]
             },
-            { id: 8, icon: "fa-draw-polygon", title: "Quadrilaterals", subtitle: "Four-Sided Polygons",
-              body: `
+            {
+                id: 8, icon: "fa-draw-polygon", title: "Quadrilaterals", subtitle: "Four-Sided Polygons",
+                body: `
                 <div class="academic-summary-block">
                     <h4><i class="fa-solid fa-circle-check"></i> Planar Polygons</h4>
                     <p>Analysis of internal parameter behavior patterns within four-sided regular and irregular bounding shapes like trapeziums and parallelograms.</p>
                 </div>
               `,
-              formulas: [
-                { name: "Angle Sum Matrix", eq: "&ang;1 + &ang;2 + &ang;3 + &ang;4 = 360&deg;", q: "Three internal angles measure 70&deg;, 80&deg;, and 110&deg;. Find the remaining angle component.", sol: "Sum = 70+80+110 = 260&deg;. Remaining Angle = 360&deg; - 260&deg; = 100&deg;." }
-              ]
+                formulas: [
+                    { name: "Angle Sum Matrix", eq: "&ang;1 + &ang;2 + &ang;3 + &ang;4 = 360&deg;", q: "Three internal angles measure 70&deg;, 80&deg;, and 110&deg;. Find the remaining angle component.", sol: "Sum = 70+80+110 = 260&deg;. Remaining Angle = 360&deg; - 260&deg; = 100&deg;." }
+                ]
             },
-            { id: 9, icon: "fa-circle-dot", title: "Circles", subtitle: "Planar Curved Radial Systems",
-              body: `
+            {
+                id: 9, icon: "fa-circle-dot", title: "Circles", subtitle: "Planar Curved Radial Systems",
+                body: `
                 <div class="academic-summary-block">
                     <h4><i class="fa-solid fa-circle-check"></i> Chord Geometry</h4>
                     <p>Analysis of equidistant geometric chord behaviors, cyclic quadrilateral structural layouts, and angular boundaries subtended at center paths.</p>
                 </div>
               `,
-              formulas: [
-                { name: "Subtended Center Theorem", eq: "&ang;Center = 2 &bull; &ang;Circle Edge", q: "If an arc subtends an angle of 40&deg; at a point on the remaining circle circumference, find the angle at the center.", sol: "&ang;Center = 2 &bull; 40&deg; = 80&deg;." }
-              ]
+                formulas: [
+                    { name: "Subtended Center Theorem", eq: "&ang;Center = 2 &bull; &ang;Circle Edge", q: "If an arc subtends an angle of 40&deg; at a point on the remaining circle circumference, find the angle at the center.", sol: "&ang;Center = 2 &bull; 40&deg; = 80&deg;." }
+                ]
             },
-            { id: 10, icon: "fa-mountain-sun", title: "Heron's Formula", subtitle: "Scalene Triangle Systems",
-              body: `
+            {
+                id: 10, icon: "fa-mountain-sun", title: "Heron's Formula", subtitle: "Scalene Triangle Systems",
+                body: `
                 <div class="academic-summary-block">
                     <h4><i class="fa-solid fa-circle-check"></i> Triangle Solutions</h4>
                     <p>Calculation models solving total internal triangular area arrays explicitly utilizing bounding perimeter data lines without regular altitude metrics.</p>
                 </div>
               `,
-              formulas: [
-                { name: "Heron's Area Law", eq: "Area = &radic;[ s(s-a)(s-b)(s-c) ]", q: "Find Area metric for side components measuring 3cm, 4cm, 5cm.", sol: "1. Semi-perimeter s = (3+4+5)/2 = 6cm.<br>2. Area calculation = &radic;[6(6-3)(6-4)(6-5)] = &radic;[6&bull;3&bull;2&bull;1] = &radic;36 = 6 cm<sup>2</sup>." }
-              ]
+                formulas: [
+                    { name: "Heron's Area Law", eq: "Area = &radic;[ s(s-a)(s-b)(s-c) ]", q: "Find Area metric for side components measuring 3cm, 4cm, 5cm.", sol: "1. Semi-perimeter s = (3+4+5)/2 = 6cm.<br>2. Area calculation = &radic;[6(6-3)(6-4)(6-5)] = &radic;[6&bull;3&bull;2&bull;1] = &radic;36 = 6 cm<sup>2</sup>." }
+                ]
             },
-            { id: 11, icon: "fa-cube", title: "Surface Areas & Volumes", subtitle: "Dimensional Metric Frameworks",
-              body: `
+            {
+                id: 11, icon: "fa-cube", title: "Surface Areas & Volumes", subtitle: "Dimensional Metric Frameworks",
+                body: `
                 <div class="academic-summary-block">
                     <h4><i class="fa-solid fa-circle-check"></i> 3D Systems</h4>
                     <p>Calculations modeling bounded spatial metrics, volumes, and skin surface measurements for cylinders, spheres, cones.</p>
                 </div>
               `,
-              formulas: [
-                { name: "Sphere Solid Volume", eq: "Vol = (4/3) &bull; &pi; &bull; r<sup>3</sup>", q: "Compute solid space volume for radius tracking at 3cm value (Set &pi;=3).", sol: "Vol = (4/3) &bull; 3 &bull; 3<sup>3</sup> = 4 &bull; 27 = 108 cm<sup>3</sup>." },
-                { name: "Cone Skin Curved Surface", eq: "CSA = &pi; &bull; r &bull; l", q: "Find skin surface area for cone running radius 7cm and slant line length 10cm.", sol: "CSA = (22/7) &bull; 7 &bull; 10 = 220 cm<sup>2</sup>." }
-              ]
+                formulas: [
+                    { name: "Sphere Solid Volume", eq: "Vol = (4/3) &bull; &pi; &bull; r<sup>3</sup>", q: "Compute solid space volume for radius tracking at 3cm value (Set &pi;=3).", sol: "Vol = (4/3) &bull; 3 &bull; 3<sup>3</sup> = 4 &bull; 27 = 108 cm<sup>3</sup>." },
+                    { name: "Cone Skin Curved Surface", eq: "CSA = &pi; &bull; r &bull; l", q: "Find skin surface area for cone running radius 7cm and slant line length 10cm.", sol: "CSA = (22/7) &bull; 7 &bull; 10 = 220 cm<sup>2</sup>." }
+                ]
             },
-            { id: 12, icon: "fa-chart-pie", title: "Statistics", subtitle: "Data Graphical Architectures",
-              body: `
+            {
+                id: 12, icon: "fa-chart-pie", title: "Statistics", subtitle: "Data Graphical Architectures",
+                body: `
                 <div class="academic-summary-block">
                     <h4><i class="fa-solid fa-circle-check"></i> Analytical Graphs</h4>
                     <p>Gathering data matrices and plotting frequency distributions via histograms, grouped polygon charts, and clear visual bars.</p>
                 </div>
               `,
-              formulas: [
-                { name: "Mean / Average Calculation", eq: "Mean = &sum;x<sub>i</sub> / N", q: "Compute metric average for data sequence components: 4, 6, 8, 10, 12.", sol: "Sum = 4+6+8+10+12 = 40. Total components counted N = 5. Mean = 40 / 5 = 8." }
-              ]
+                formulas: [
+                    { name: "Mean / Average Calculation", eq: "Mean = &sum;x<sub>i</sub> / N", q: "Compute metric average for data sequence components: 4, 6, 8, 10, 12.", sol: "Sum = 4+6+8+10+12 = 40. Total components counted N = 5. Mean = 40 / 5 = 8." }
+                ]
             }
         ];
 
@@ -887,7 +965,7 @@
             ncertChaptersDataset.forEach((chapter, index) => {
                 const accordionItem = document.createElement("div");
                 accordionItem.className = "accordion-item";
-                
+
                 // Aggregate internal formulas HTML string safely
                 let formulaCardsHtml = "";
                 chapter.formulas.forEach((f, fIdx) => {
@@ -933,11 +1011,11 @@
         function handleAccordionExpansion(buttonElement) {
             const contentBox = buttonElement.nextElementSibling;
             const chevron = buttonElement.querySelector(".chevron-icon");
-            
+
             // Close all other sibling folders for clean spatial view
             const allBoxes = document.querySelectorAll(".accordion-content-box");
             const allChevrons = document.querySelectorAll(".chevron-icon");
-            
+
             allBoxes.forEach((box, idx) => {
                 if (box !== contentBox) {
                     box.style.maxHeight = null;
@@ -962,7 +1040,7 @@
             const arrowIcon = event.currentTarget.querySelector(".toggle-arrow");
             const parentAccordionContent = targetPanel.closest(".accordion-content-box");
 
-            if(targetPanel.style.display === "block") {
+            if (targetPanel.style.display === "block") {
                 targetPanel.style.display = "none";
                 arrowIcon.style.transform = "rotate(0deg)";
             } else {
@@ -987,7 +1065,7 @@
             allViews.forEach(view => view.classList.remove("active-view"));
 
             const targetView = document.getElementById(`view-${viewTargetId}`);
-            if(targetView) targetView.classList.add("active-view");
+            if (targetView) targetView.classList.add("active-view");
         }
 
         // Mount Fullscreen Chapter Summary with Custom Loader Animation state
@@ -1074,4 +1152,5 @@
         });
     </script>
 </body>
+
 </html>
