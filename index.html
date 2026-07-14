@@ -29,6 +29,7 @@
     <meta name="color-scheme" content="light">
 
     <link rel="apple-touch-icon" href="logo192.png">
+    <link rel="icon" href="logo192.png">
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
@@ -613,6 +614,73 @@
                 transform: translateY(0);
             }
         }
+
+        .chapter-image-box {
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .chapter-image {
+            width: 100%;
+            max-width: 700px;
+            border-radius: 18px;
+            cursor: zoom-in;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-user-drag: none;
+            -webkit-touch-callout: none;
+            transition: .3s;
+        }
+
+        .chapter-image:hover {
+            transform: scale(1.02);
+        }
+
+        .image-viewer {
+
+            position: fixed;
+            inset: 0;
+
+            background: rgba(0, 0, 0, .92);
+
+            display: none;
+            justify-content: center;
+            align-items: center;
+
+            z-index: 999999;
+
+        }
+
+        .image-viewer.active {
+            display: flex;
+        }
+
+        .image-viewer img {
+
+            max-width: 95%;
+            max-height: 90%;
+
+            touch-action: none;
+            user-select: none;
+
+            transform-origin: center;
+
+        }
+
+        .close-btn {
+
+            position: absolute;
+
+            top: 20px;
+            right: 25px;
+
+            color: white;
+
+            font-size: 35px;
+
+            cursor: pointer;
+
+        }
     </style>
 </head>
 
@@ -776,21 +844,326 @@
         // High Quality NCERT Syllabus Structural Data Repository
         const ncertChaptersDataset = [
             {
-                id: 1, icon: "fa-calculator", title: "Number Systems", subtitle: "Core Foundations",
+                id: 1,
+                icon: "fa-calculator",
+                title: "Number Systems",
+                subtitle: "Core Foundations",
+
                 body: `
-                <div class="academic-summary-block">
-                    <h4><i class="fa-solid fa-circle-check"></i> Concept Breakdown</h4>
-                    <p>Study of rational numbers, irrational expansions, and numbers representation on real geometric axis systems.</p>
-                </div>
-                <div class="academic-summary-block">
-                    <h4><i class="fa-solid fa-hashtag"></i> Rational Numbers</h4>
-                    <p>Numbers structurally expressible as <b>p/q</b> form where both components represent integers and denominator q &ne; 0.</p>
-                </div>
-              `,
+<div class="academic-summary-block">
+<h4><i class="fa-solid fa-book-open"></i> Introduction</h4>
+<p>
+A number is used to count, measure and compare things.
+In this chapter we study different types of numbers like Natural Numbers,
+Whole Numbers, Integers, Rational Numbers, Irrational Numbers and Real Numbers.
+We also learn how to represent these numbers on the Number Line.
+</p>
+</div>
+
+<div class="academic-summary-block">
+<h4><i class="fa-solid fa-circle-check"></i> Natural Numbers (N)</h4>
+<p>
+Natural numbers are counting numbers.
+They start from <b>1</b> and continue forever.
+</p>
+
+<pre>
+1, 2, 3, 4, 5, 6, 7, 8...
+</pre>
+
+<p>
+Example:
+Number of students,
+Number of books,
+Number of apples.
+</p>
+</div>
+
+<div class="academic-summary-block">
+<h4><i class="fa-solid fa-circle-check"></i> Whole Numbers (W)</h4>
+
+<p>
+Whole numbers include all Natural Numbers and also <b>0</b>.
+</p>
+
+<pre>
+0, 1, 2, 3, 4, 5...
+</pre>
+
+</div>
+
+<div class="academic-summary-block">
+<h4><i class="fa-solid fa-circle-check"></i> Integers (Z)</h4>
+
+<p>
+Integers include positive numbers,
+negative numbers and zero.
+</p>
+
+<pre>
+... -3  -2  -1   0   1   2   3 ...
+</pre>
+
+</div>
+
+<div class="academic-summary-block">
+
+<h4><i class="fa-solid fa-circle-check"></i> Rational Numbers (Q)</h4>
+
+<p>
+
+A Rational Number is a number which can be written in the form
+
+<b>p/q</b>
+
+where
+
+<ul>
+
+<li>p and q are integers.</li>
+
+<li>q ≠ 0</li>
+
+</ul>
+
+Examples
+
+<pre>
+
+1/2
+3/5
+-7/8
+5 = 5/1
+
+</pre>
+
+Every terminating decimal and repeating decimal is a Rational Number.
+
+Examples
+
+<pre>
+
+0.5
+2.75
+0.33333...
+1.272727...
+
+</pre>
+
+</p>
+
+</div>
+
+<div class="academic-summary-block">
+
+<h4><i class="fa-solid fa-circle-check"></i> Irrational Numbers</h4>
+
+<p>
+
+Numbers which cannot be written in the form p/q are called Irrational Numbers.
+
+Their decimal expansion is
+
+<ul>
+
+<li>Non-Terminating</li>
+
+<li>Non-Repeating</li>
+
+</ul>
+
+Examples
+
+<pre>
+
+√2
+√3
+√5
+π
+
+</pre>
+
+</p>
+
+</div>
+
+<div class="academic-summary-block">
+
+<h4><i class="fa-solid fa-circle-check"></i> Real Numbers (R)</h4>
+
+<p>
+
+All Rational Numbers and Irrational Numbers together are called Real Numbers.
+
+</p>
+
+<pre>
+
+Real Numbers
+
+├── Rational Numbers
+
+└── Irrational Numbers
+
+</pre>
+
+</div>
+
+<div class="academic-summary-block">
+
+<h4><i class="fa-solid fa-ruler-horizontal"></i> Number Line</h4>
+
+<p>
+
+Every Real Number can be represented on a Number Line.
+
+</p>
+
+<pre>
+
+←────|────|────|────|────→
+
+ -2   -1    0    1    2
+
+</pre>
+
+</div>
+
+<div class="academic-summary-block">
+
+<h4><i class="fa-solid fa-sitemap"></i> Classification of Numbers</h4>
+
+<pre>
+
+          Real Numbers
+
+          /         \\
+
+ Rational       Irrational
+
+     |
+
+ Integers
+
+     |
+
+Whole Numbers
+
+     |
+
+Natural Numbers
+
+</pre>
+
+</div>
+
+<div class="academic-summary-block">
+
+<h4><i class="fa-solid fa-lightbulb"></i> Important Points</h4>
+
+<ul>
+
+<li>Natural Numbers start from 1.</li>
+
+<li>Whole Numbers start from 0.</li>
+
+<li>Integers include negative numbers.</li>
+
+<li>Every Integer is a Rational Number.</li>
+
+<li>Every Rational Number is a Real Number.</li>
+
+<li>Every Irrational Number is also a Real Number.</li>
+
+<li>√4 = 2 is Rational.</li>
+
+<li>√2 is Irrational.</li>
+
+<li>π is Irrational.</li>
+
+</ul>
+
+</div>
+
+<div class="chapter-image-box">
+
+    <img
+        src="numbersystem.png"
+        alt="Number System Diagram"
+        class="chapter-image"
+        loading="lazy"
+        draggable="false"
+        onclick="openImage(this.src)"
+        oncontextmenu="return false;">
+
+</div>
+
+<!-- Image Viewer -->
+
+<div id="imageViewer" class="image-viewer">
+
+    <span class="close-btn" onclick="closeImage()">
+        <i class="fa-solid fa-xmark"></i>
+    </span>
+
+    <img id="viewerImg">
+
+</div>
+`,
+
                 formulas: [
-                    { name: "Exponent Addition Law", eq: "a<sup>p</sup> &bull; a<sup>q</sup> = a<sup>p+q</sup>", q: "Simplify: 5<sup>2</sup> &bull; 5<sup>4</sup>", sol: "5<sup>2+4</sup> = 5<sup>6</sup> = 15,625" },
-                    { name: "Exponent Power Law", eq: "(a<sup>p</sup>)<sup>q</sup> = a<sup>pq</sup>", q: "Simplify: (2<sup>3</sup>)<sup>2</sup>", sol: "2<sup>3&bull;2</sup> = 2<sup>6</sup> = 64" }
+
+                    {
+                        name: "Product Law of Exponents",
+                        eq: "a<sup>m</sup> × a<sup>n</sup> = a<sup>m+n</sup>",
+                        q: "Find: 2<sup>3</sup> × 2<sup>4</sup>",
+                        sol: "2<sup>7</sup> = 128"
+                    },
+
+                    {
+                        name: "Division Law",
+                        eq: "a<sup>m</sup> ÷ a<sup>n</sup> = a<sup>m−n</sup>",
+                        q: "Find: 5<sup>6</sup> ÷ 5<sup>2</sup>",
+                        sol: "5<sup>4</sup> = 625"
+                    },
+
+                    {
+                        name: "Power of Power",
+                        eq: "(a<sup>m</sup>)<sup>n</sup> = a<sup>mn</sup>",
+                        q: "Find: (3<sup>2</sup>)<sup>3</sup>",
+                        sol: "3<sup>6</sup> = 729"
+                    },
+
+                    {
+                        name: "Power of Product",
+                        eq: "(ab)<sup>n</sup> = a<sup>n</sup>b<sup>n</sup>",
+                        q: "Find: (2×3)<sup>2</sup>",
+                        sol: "2²×3² = 4×9 = 36"
+                    },
+
+                    {
+                        name: "Power of Quotient",
+                        eq: "(a/b)<sup>n</sup> = a<sup>n</sup>/b<sup>n</sup>",
+                        q: "Find: (2/5)<sup>2</sup>",
+                        sol: "4/25"
+                    },
+
+                    {
+                        name: "Zero Exponent",
+                        eq: "a<sup>0</sup> = 1",
+                        q: "Find: 8<sup>0</sup>",
+                        sol: "1"
+                    },
+
+                    {
+                        name: "Negative Exponent",
+                        eq: "a<sup>-n</sup> = 1/a<sup>n</sup>",
+                        q: "Find: 2<sup>-3</sup>",
+                        sol: "1/8"
+                    }
+
                 ]
+
             },
             {
                 id: 2, icon: "fa-trowel-bricks", title: "Polynomials", subtitle: "Algebraic Layouts",
@@ -1149,6 +1522,119 @@
         window.addEventListener('appinstalled', () => {
             console.log('Muskan\'s Maths added to system successfully.');
             installModal.style.display = 'none';
+        });
+
+        const viewer = document.getElementById("imageViewer");
+        const img = document.getElementById("viewerImg");
+
+        let scale = 1;
+
+        function openImage(src) {
+
+            img.src = src;
+
+            scale = 1;
+
+            img.style.transform = "scale(1)";
+
+            viewer.classList.add("active");
+
+        }
+
+        function closeImage() {
+
+            viewer.classList.remove("active");
+
+        }
+
+        viewer.addEventListener("click", (e) => {
+
+            if (e.target === viewer) {
+
+                closeImage();
+
+            }
+
+        });
+
+        // Double Click Zoom
+
+        img.addEventListener("dblclick", () => {
+
+            scale = scale == 1 ? 2 : 1;
+
+            img.style.transform = `scale(${scale})`;
+
+        });
+
+        // Mobile Pinch Zoom
+
+        let startDistance = 0;
+
+        function distance(t1, t2) {
+
+            return Math.hypot(
+
+                t1.clientX - t2.clientX,
+
+                t1.clientY - t2.clientY
+
+            );
+
+        }
+
+        img.addEventListener("touchstart", e => {
+
+            if (e.touches.length == 2) {
+
+                startDistance = distance(
+
+                    e.touches[0],
+
+                    e.touches[1]
+
+                );
+
+            }
+
+        }, { passive: true });
+
+        img.addEventListener("touchmove", e => {
+
+            if (e.touches.length == 2) {
+
+                let newDistance = distance(
+
+                    e.touches[0],
+
+                    e.touches[1]
+
+                );
+
+                scale *= newDistance / startDistance;
+
+                scale = Math.max(1, Math.min(scale, 5));
+
+                img.style.transform = `scale(${scale})`;
+
+                startDistance = newDistance;
+
+            }
+
+        }, { passive: true });
+
+        // Protection
+
+        document.querySelectorAll(".chapter-image,#viewerImg").forEach(el => {
+
+            el.draggable = false;
+
+            el.addEventListener("dragstart", e => e.preventDefault());
+
+            el.addEventListener("contextmenu", e => e.preventDefault());
+
+            el.addEventListener("selectstart", e => e.preventDefault());
+
         });
     </script>
 </body>
