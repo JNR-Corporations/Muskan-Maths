@@ -1,0 +1,21 @@
+{
+"name": "Muskan's Maths",
+"short_name": "MuskanMaths",
+"start_url": "./muskan_maths_premium.html",
+"display": "standalone",
+"background_color": "#FFF0F3",
+"theme_color": "#FF4D6D",
+"orientation": "portrait",
+"icons": [
+{
+"src": "logo192.png",
+"sizes": "192x192",
+"type": "image/png"
+},
+{
+"src": "logo512.png",
+"sizes": "512x512",
+"type": "image/png"
+}
+]
+}
