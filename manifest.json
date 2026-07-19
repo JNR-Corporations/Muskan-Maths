@@ -2,22 +2,23 @@
   "id": "/",
   "name": "Muskan's Maths",
   "short_name": "Maths",
-  "description": "Premium Class 9 Mathematics Learning App with Notes, Formulas, Practice Questions and Offline Support.",
+  "description": "Premium Mathematics Learning Platform for Class 9 students featuring interactive chapters, formulas, solved examples, practice questions, quizzes, progress tracking, offline learning and regular content updates.",
 
-  "lang": "en",
+  "lang": "en-IN",
   "dir": "ltr",
 
-  "start_url": "./index.html",
-  "scope": "./",
+  "start_url": "/index.html?utm_source=pwa",
+  "scope": "/",
 
   "display": "standalone",
   "display_override": [
+    "window-controls-overlay",
     "standalone",
     "minimal-ui",
-    "window-controls-overlay"
+    "browser"
   ],
 
-  "orientation": "portrait",
+  "orientation": "portrait-primary",
 
   "theme_color": "#FF4D6D",
   "background_color": "#FFF0F3",
@@ -25,13 +26,59 @@
   "categories": [
     "education",
     "books",
+    "reference",
     "productivity"
   ],
 
+  "prefer_related_applications": false,
+
+  "launch_handler": {
+    "client_mode": [
+      "focus-existing",
+      "navigate-existing"
+    ]
+  },
+
   "icons": [
+    {
+      "src": "logo72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "logo96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "logo128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "logo144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "logo152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
     {
       "src": "logo192.png",
       "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "logo384.png",
+      "sizes": "384x384",
       "type": "image/png",
       "purpose": "any"
     },
@@ -46,44 +93,119 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
+    },
+    {
+      "src": "logo512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "monochrome"
+    }
+  ],
+
+  "screenshots": [
+    {
+      "src": "screenshots/home.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Home Screen"
+    },
+    {
+      "src": "screenshots/chapter.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Interactive Chapter"
+    },
+    {
+      "src": "screenshots/formulas.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Formula Vault"
+    },
+    {
+      "src": "screenshots/practice.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Practice Questions"
     }
   ],
 
   "shortcuts": [
     {
-      "name": "Chapters",
+      "name": "Study Chapters",
       "short_name": "Chapters",
-      "url": "./index.html#chapters",
+      "description": "Browse all chapters",
+      "url": "/index.html#chapters",
       "icons": [
         {
-          "src": "logo192.png",
+          "src": "shortcut-chapter.png",
           "sizes": "192x192"
         }
       ]
     },
     {
       "name": "Formula Vault",
-      "short_name": "Formulas",
-      "url": "./index.html#formulas",
+      "short_name": "Formula",
+      "description": "Quick formulas",
+      "url": "/index.html#formulas",
       "icons": [
         {
-          "src": "logo192.png",
+          "src": "shortcut-formula.png",
           "sizes": "192x192"
         }
       ]
     },
     {
-      "name": "Study Tips",
-      "short_name": "Tips",
-      "url": "./index.html#tips",
+      "name": "Practice Questions",
+      "short_name": "Practice",
+      "description": "Solve questions",
+      "url": "/index.html#practice",
       "icons": [
         {
-          "src": "logo192.png",
+          "src": "shortcut-practice.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Mock Test",
+      "short_name": "Mock",
+      "description": "Start mock test",
+      "url": "/index.html#mock",
+      "icons": [
+        {
+          "src": "shortcut-mock.png",
           "sizes": "192x192"
         }
       ]
     }
   ],
 
-  "prefer_related_applications": false
+  "share_target": {
+    "action": "/share",
+    "method": "GET",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+
+  "file_handlers": [
+    {
+      "action": "/",
+      "accept": {
+        "application/pdf": [
+          ".pdf"
+        ],
+        "text/plain": [
+          ".txt"
+        ]
+      }
+    }
+  ]
 }

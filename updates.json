@@ -1,0 +1,15 @@
+{
+  "latestVersion": "4.0.0",
+  "releaseDate": "2026-07-19",
+  "changelog": [
+    {
+      "version": "4.0.0",
+      "type": "Major Framework Release",
+      "features": [
+        "Light Neumorphic UI Dashboard Integration",
+        "Enterprise Vanilla Service Worker v4 Runtime Implementation",
+        "Fully disconnected fallback structures setup via local strategies"
+      ]
+    }
+  ]
+}

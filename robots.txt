@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Host & Sitemap Declarations
+Host: https://muskaansmaths.local
+Sitemap: https://muskaansmaths.local/sitemap.xml

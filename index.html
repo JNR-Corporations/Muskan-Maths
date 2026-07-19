@@ -26,10 +26,23 @@
 
     <meta name="msapplication-TileColor" content="#FF4D6D">
 
-    <meta name="color-scheme" content="light">
+    <link class="light-icon" rel="apple-touch-icon" href="logo192.png">
 
-    <link rel="apple-touch-icon" href="logo192.png">
-    <link rel="icon" href="logo192.png">
+    <link class="light-icon" rel="icon" href="logo192.png">
+    
+    <meta name="description" content="Muskan Maths - Interactive UP Board Maths Learning Platform">
+
+    <meta name="keywords" content="Maths, UP Board, Class 9, Class 10, Muskan Maths">
+
+    <meta name="author" content="Raj Verma">
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="format-detection" content="telephone=no">
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="color-scheme" content="light dark">
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
@@ -50,6 +63,27 @@
             --text-muted: #8A5863;
             --clay-shadow-flat: 6px 6px 12px rgba(255, 77, 109, 0.15), -6px -6px 12px #FFFFFF;
             --clay-shadow-pressed: inset 4px 4px 8px rgba(255, 77, 109, 0.12), inset -4px -4px 8px #FFFFFF;
+            --shell-shadow: 0px 30px 60px rgba(255, 77, 109, 0.2);
+            --card-bg: #FFFFFF;
+            --body-bg: #FFE3E8;
+            --glow-effect: 0px 0px 20px rgba(255, 77, 109, 0.45);
+        }
+
+        /* High Fidelity Dark Mode Variables Override */
+        [data-theme="dark"] {
+            --bg-base: #120A0C;
+            --clay-pink-dark: #FF5E7E;
+            --clay-pink-medium: #FF859F;
+            --clay-pink-light: #FFC4D0;
+            --clay-pink-soft: #261418;
+            --text-dark: #FFE5EC;
+            --text-muted: #DDA1AE;
+            --clay-shadow-flat: 6px 6px 14px rgba(0, 0, 0, 0.45), -4px -4px 10px rgba(255, 77, 109, 0.05);
+            --clay-shadow-pressed: inset 4px 4px 8px rgba(0, 0, 0, 0.5), inset -2px -2px 6px rgba(255, 77, 109, 0.08);
+            --shell-shadow: 0px 35px 70px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 77, 109, 0.15);
+            --card-bg: #1C1215;
+            --body-bg: #090304;
+            --glow-effect: 0px 0px 30px rgba(255, 77, 109, 0.65);
         }
 
         * {
@@ -61,13 +95,14 @@
         }
 
         body {
-            background-color: #FFE3E8;
+            background-color: var(--body-bg);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             color: var(--text-dark);
             overflow: hidden;
+            transition: background-color 0.4s ease;
         }
 
         /* Safe Edge-to-Edge Android Viewport App Frame */
@@ -79,15 +114,16 @@
             display: flex;
             flex-direction: column;
             position: relative;
-            box-shadow: 0px 30px 60px rgba(255, 77, 109, 0.2);
+            box-shadow: var(--shell-shadow);
             overflow: hidden;
+            transition: background-color 0.4s ease, box-shadow 0.4s ease;
         }
 
         @media (min-width: 460px) {
             .app-shell {
                 height: 860px;
                 border-radius: 42px;
-                border: 8px solid #FFFFFF;
+                border: 8px solid var(--card-bg);
             }
         }
 
@@ -103,20 +139,27 @@
         .brand-header {
             display: flex;
             align-items: center;
-            gap: 16px;
+            justify-content: space-between;
             padding: 10px 0;
             margin-bottom: 15px;
+        }
+
+        .header-left-block {
+            display: flex;
+            align-items: center;
+            gap: 16px;
         }
 
         .brand-logo-frame {
             width: 68px;
             height: 68px;
-            background: #FFFFFF;
+            background: var(--card-bg);
             border-radius: 22px;
             display: flex;
             justify-content: center;
             align-items: center;
             box-shadow: var(--clay-shadow-flat), var(--clay-shadow-pressed);
+            transition: background 0.4s ease, box-shadow 0.4s ease;
         }
 
         .brand-logo-svg {
@@ -135,6 +178,29 @@
             font-size: 13px;
             color: var(--text-muted);
             font-weight: 600;
+        }
+
+        /* High Tech Modern Dark Mode Switch Anchor */
+        .dark-mode-toggle-anchor {
+            width: 46px;
+            height: 46px;
+            background: var(--card-bg);
+            border-radius: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: var(--clay-shadow-flat);
+            color: var(--clay-pink-dark);
+            font-size: 18px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            outline: none;
+        }
+
+        .dark-mode-toggle-anchor:active {
+            transform: scale(0.92);
+            box-shadow: var(--clay-shadow-pressed);
         }
 
         /* Universal Section Title Layout */
@@ -158,10 +224,11 @@
             border-radius: 26px;
             padding: 22px;
             color: #FFFFFF;
-            box-shadow: 0px 14px 28px rgba(255, 77, 109, 0.25);
+            box-shadow: var(--glow-effect);
             margin-bottom: 20px;
             position: relative;
             overflow: hidden;
+            transition: box-shadow 0.4s ease;
         }
 
         .welcome-card h2 {
@@ -206,9 +273,9 @@
             gap: 14px;
         }
 
-        /* Tactile Claymorphic Chapter Items */
+        /* Premium Dynamic Glow Card Architecture */
         .dashboard-item-card {
-            background: #FFFFFF;
+            background: var(--card-bg);
             border: none;
             border-radius: 22px;
             padding: 16px 20px;
@@ -217,7 +284,32 @@
             align-items: center;
             justify-content: space-between;
             box-shadow: var(--clay-shadow-flat);
-            transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dashboard-item-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 22px;
+            padding: 2px;
+            background: linear-gradient(135deg, var(--clay-pink-light), transparent, var(--clay-pink-dark));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0.25;
+            transition: opacity 0.3s ease;
+        }
+
+        .dashboard-item-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(255, 77, 109, 0.18), var(--clay-shadow-flat);
+        }
+
+        .dashboard-item-card:hover::after {
+            opacity: 0.8;
         }
 
         .dashboard-item-card:active {
@@ -243,6 +335,7 @@
             color: var(--clay-pink-dark);
             font-size: 19px;
             box-shadow: var(--clay-shadow-pressed);
+            transition: background 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
         }
 
         .card-details-meta h3 {
@@ -250,21 +343,29 @@
             font-weight: 700;
             color: var(--text-dark);
             margin-bottom: 2px;
+            transition: color 0.4s ease;
         }
 
         .card-details-meta p {
             font-size: 11px;
             color: var(--text-muted);
+            transition: color 0.4s ease;
         }
 
         .card-arrow-indicator {
             color: var(--clay-pink-medium);
             font-size: 13px;
+            transition: transform 0.3s ease;
+        }
+
+        .dashboard-item-card:hover .card-arrow-indicator {
+            transform: translateX(4px);
+            color: var(--clay-pink-dark);
         }
 
         /* Dynamic Expandable Accordion Layout for Formula Sheets */
         .accordion-item {
-            background: #FFFFFF;
+            background: var(--card-bg);
             border-radius: 22px;
             margin-bottom: 14px;
             box-shadow: var(--clay-shadow-flat);
@@ -275,13 +376,14 @@
         .accordion-trigger {
             width: 100%;
             padding: 18px 20px;
-            background: #FFFFFF;
+            background: var(--card-bg);
             border: none;
             display: flex;
             align-items: center;
             justify-content: space-between;
             cursor: pointer;
             text-align: left;
+            transition: background 0.4s ease;
         }
 
         .accordion-trigger-left {
@@ -294,6 +396,7 @@
             font-size: 15px;
             font-weight: 700;
             color: var(--text-dark);
+            transition: color 0.4s ease;
         }
 
         .accordion-trigger i.chevron-icon {
@@ -311,22 +414,24 @@
         }
 
         .formula-segment-card {
-            background: #FFFFFF;
+            background: var(--card-bg);
             border-radius: 18px;
             padding: 16px;
             margin: 15px 0;
             box-shadow: 0px 6px 15px rgba(255, 77, 109, 0.05);
             border-left: 5px solid var(--clay-pink-dark);
+            transition: background 0.4s ease;
         }
 
         .formula-segment-card h4 {
             font-size: 14px;
             color: var(--text-dark);
             margin-bottom: 4px;
+            transition: color 0.4s ease;
         }
 
         .formula-equation-badge {
-            background: #FFE5EC;
+            background: var(--clay-pink-soft);
             padding: 12px;
             border-radius: 14px;
             text-align: center;
@@ -336,6 +441,7 @@
             margin: 10px 0;
             box-shadow: var(--clay-shadow-pressed);
             letter-spacing: 0.5px;
+            transition: background 0.4s ease, box-shadow 0.4s ease;
         }
 
         .formula-equation-badge sub,
@@ -348,7 +454,8 @@
             margin-top: 12px;
             border-radius: 12px;
             border: 1px dashed var(--clay-pink-light);
-            background: #FFFBFB;
+            background: var(--card-bg);
+            transition: background 0.4s ease, border-color 0.4s ease;
         }
 
         .practice-toggle-bar {
@@ -360,7 +467,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: #FFF0F2;
+            background: var(--clay-pink-soft);
+            transition: background 0.4s ease;
         }
 
         .practice-solution-details {
@@ -370,6 +478,7 @@
             line-height: 1.5;
             border-top: 1px dashed var(--clay-pink-light);
             display: none;
+            transition: color 0.4s ease, border-color 0.4s ease;
         }
 
         /* Fullscreen Isolated Chapter Detail Mode */
@@ -380,7 +489,7 @@
         }
 
         .back-navigator-action {
-            background: #FFFFFF;
+            background: var(--card-bg);
             border: none;
             padding: 10px 18px;
             border-radius: 16px;
@@ -393,6 +502,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            transition: background 0.4s ease, box-shadow 0.4s ease;
         }
 
         .back-navigator-action:active {
@@ -400,11 +510,12 @@
         }
 
         .academic-summary-block {
-            background: #FFFFFF;
+            background: var(--card-bg);
             border-radius: 26px;
             padding: 22px;
             box-shadow: var(--clay-shadow-flat);
             margin-bottom: 16px;
+            transition: background 0.4s ease, box-shadow 0.4s ease;
         }
 
         .academic-summary-block h4 {
@@ -421,6 +532,7 @@
             font-size: 13px;
             line-height: 1.6;
             color: var(--text-dark);
+            transition: color 0.4s ease;
         }
 
         /* Royal Glowing Developer Profile Card */
@@ -435,14 +547,15 @@
         .avatar-glow-shield {
             width: 105px;
             height: 105px;
-            background: #FFFFFF;
+            background: var(--card-bg);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 16px;
-            box-shadow: 0px 10px 25px rgba(255, 77, 109, 0.2), var(--clay-shadow-pressed);
+            box-shadow: var(--glow-effect), var(--clay-shadow-pressed);
             border: 4px solid var(--clay-pink-soft);
+            transition: all 0.4s ease;
         }
 
         .avatar-glow-shield i {
@@ -458,11 +571,12 @@
             display: flex;
             align-items: center;
             gap: 6px;
+            transition: color 0.4s ease;
         }
 
         .dev-badge-title span.name-glow {
             color: var(--clay-pink-dark);
-            text-shadow: 2px 2px 8px rgba(255, 77, 109, 0.15);
+            text-shadow: 0 0 10px rgba(255, 77, 109, 0.4);
         }
 
         .dev-tagline {
@@ -470,6 +584,7 @@
             color: var(--text-muted);
             margin-bottom: 25px;
             font-weight: 600;
+            transition: color 0.4s ease;
         }
 
         /* Fullscreen High Fidelity Wave Overlay Loader */
@@ -485,19 +600,21 @@
             align-items: center;
             justify-content: center;
             z-index: 20;
+            transition: background-color 0.4s ease;
         }
 
         .pulsing-logo-anchor {
             position: relative;
             width: 95px;
             height: 95px;
-            background: #FFFFFF;
+            background: var(--card-bg);
             border-radius: 30px;
             display: flex;
             justify-content: center;
             align-items: center;
             box-shadow: var(--clay-shadow-flat);
             animation: bounceScaleLogo 1.4s infinite ease-in-out;
+            transition: background 0.4s ease, box-shadow 0.4s ease;
         }
 
         @keyframes bounceScaleLogo {
@@ -550,14 +667,15 @@
             left: 0;
             width: 100%;
             height: 78px;
-            background: #FFFFFF;
+            background: var(--card-bg);
             border-top: 1px solid rgba(255, 77, 109, 0.1);
             display: flex;
             justify-content: space-around;
             align-items: center;
-            box-shadow: 0 -12px 30px rgba(255, 77, 109, 0.06);
+            box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.05);
             border-radius: 28px 28px 0 0;
             z-index: 10;
+            transition: background 0.4s ease;
         }
 
         .nav-dock-action {
@@ -585,13 +703,6 @@
         }
 
         .nav-dock-action.nav-active {
-            color: var(--clay-pink-dark);
-        }
-
-        .nav-dock-action.nav-active i {
-            background-color: var(--clay-pink-soft);
-            box-shadow: var(--clay-shadow-pressed);
-            transform: translateY(-4px);
             color: var(--clay-pink-dark);
         }
 
@@ -704,8 +815,8 @@
             50% {
                 transform: scale(1.03);
                 text-shadow:
-                    0 0 10px rgba(255, 120, 160, .5),
-                    0 0 20px rgba(255, 90, 140, .35);
+                    0 0 15px rgba(255, 77, 109, .6),
+                    0 0 25px rgba(255, 77, 109, .4);
             }
         }
 
@@ -885,7 +996,7 @@
 
             padding: 15px;
 
-            background: #fff;
+            background: var(--card-bg);
 
             border-radius: 18px;
 
@@ -913,7 +1024,7 @@
 
             background: linear-gradient(120deg,
                     transparent,
-                    rgba(255, 255, 255, .8),
+                    rgba(255, 255, 255, .4),
                     transparent);
 
             transform: translateX(-130%);
@@ -960,7 +1071,7 @@
 
             border-radius: 18px;
 
-            background: #fff5f8;
+            background: var(--clay-pink-soft);
 
             display: flex;
 
@@ -1010,7 +1121,7 @@
 
             font-size: 12px;
 
-            color: #888;
+            color: var(--text-muted);
 
         }
 
@@ -1110,6 +1221,19 @@
             }
 
         }
+
+        /* Custom PWA Install Prompt Update styled for system variables */
+        #pwa-install-modal {
+            background: var(--card-bg) !important;
+            border-color: var(--clay-pink-soft) !important;
+            box-shadow: var(--clay-shadow-flat) !important;
+        }
+
+        #pwa-close-btn {
+            background: var(--card-bg) !important;
+            box-shadow: var(--clay-shadow-flat) !important;
+            color: var(--text-muted) !important;
+        }
     </style>
 </head>
 
@@ -1123,37 +1247,45 @@
 
             <!-- Global Static Header for Main Tabs -->
             <div class="brand-header" id="app-global-header">
-                <div class="brand-logo-frame">
-                    <!-- Custom SVG Smiling Mathematical Root Logo -->
-                    <svg class="brand-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="pinkGlowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#FF758F" />
-                                <stop offset="100%" stop-color="#FF4D6D" />
-                            </linearGradient>
-                        </defs>
-                        <rect x="10" y="10" width="80" height="80" rx="24" fill="url(#pinkGlowGrad)" />
-                        <circle cx="36" cy="38" r="6.5" fill="#FFFFFF" />
-                        <circle cx="64" cy="38" r="6.5" fill="#FFFFFF" />
-                        <!-- Smooth Parabolic Smile Line -->
-                        <path d="M 26 56 Q 50 82 74 56" stroke="#FFFFFF" stroke-width="7.5" stroke-linecap="round"
-                            fill="none" />
-                        <circle cx="38" cy="36" r="2.2" fill="#FF4D6D" />
-                        <circle cx="66" cy="36" r="2.2" fill="#FF4D6D" />
-                    </svg>
-                </div>
-                <div class="brand-titles">
-                    <h1>Muskan's Maths</h1>
-                    <div class="flower-animation">
-                        <span class="petal p1"></span>
-                        <span class="petal p2"></span>
-                        <span class="petal p3"></span>
-                        <span class="petal p4"></span>
-                        <span class="petal p5"></span>
-                        <span class="petal p6"></span>
+                <div class="header-left-block">
+                    <div class="brand-logo-frame">
+                        <!-- Custom SVG Smiling Mathematical Root Logo -->
+                        <svg class="brand-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="pinkGlowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#FF758F" />
+                                    <stop offset="100%" stop-color="#FF4D6D" />
+                                </linearGradient>
+                            </defs>
+                            <rect x="10" y="10" width="80" height="80" rx="24" fill="url(#pinkGlowGrad)" />
+                            <circle cx="36" cy="38" r="6.5" fill="#FFFFFF" />
+                            <circle cx="64" cy="38" r="6.5" fill="#FFFFFF" />
+                            <!-- Smooth Parabolic Smile Line -->
+                            <path d="M 26 56 Q 50 82 74 56" stroke="#FFFFFF" stroke-width="7.5" stroke-linecap="round"
+                                fill="none" />
+                            <circle cx="38" cy="36" r="2.2" fill="#FF4D6D" />
+                            <circle cx="66" cy="36" r="2.2" fill="#FF4D6D" />
+                        </svg>
                     </div>
-                    <p>Learn Class 9 Maths with a Smile</p>
+                    <div class="brand-titles">
+                        <h1>Muskan's Maths</h1>
+                        <div class="flower-animation">
+                            <span class="petal p1"></span>
+                            <span class="petal p2"></span>
+                            <span class="petal p3"></span>
+                            <span class="petal p4"></span>
+                            <span class="petal p5"></span>
+                            <span class="petal p6"></span>
+                        </div>
+                        <p>Learn Class 9 Maths with a Smile</p>
+                    </div>
                 </div>
+
+                <!-- Premium Dynamic Dark Mode Button -->
+                <button class="dark-mode-toggle-anchor" id="theme-toggle-btn" onclick="toggleAppTheme()"
+                    aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
             </div>
 
             <!-- TAB 1: SCREEN CHAPTERS (DASHBOARD HOME) -->
@@ -1406,7 +1538,7 @@ Natural numbers are counting numbers.
 They start from <b>1</b> and continue forever.
 </p>
 
-<pre>
+<pre style="color:var(--text-dark);">
 1, 2, 3, 4, 5, 6, 7, 8...
 </pre>
 
@@ -1425,7 +1557,7 @@ Number of apples.
 Whole numbers include all Natural Numbers and also <b>0</b>.
 </p>
 
-<pre>
+<pre style="color:var(--text-dark);">
 0, 1, 2, 3, 4, 5...
 </pre>
 
@@ -1439,7 +1571,7 @@ Integers include positive numbers,
 negative numbers and zero.
 </p>
 
-<pre>
+<pre style="color:var(--text-dark);">
 ... -3  -2  -1   0   1   2   3 ...
 </pre>
 
@@ -1467,7 +1599,7 @@ where
 
 Examples
 
-<pre>
+<pre style="color:var(--text-dark);">
 
 1/2
 3/5
@@ -1480,7 +1612,7 @@ Every terminating decimal and repeating decimal is a Rational Number.
 
 Examples
 
-<pre>
+<pre style="color:var(--text-dark);">
 
 0.5
 2.75
@@ -1513,7 +1645,7 @@ Their decimal expansion is
 
 Examples
 
-<pre>
+<pre style="color:var(--text-dark);">
 
 √2
 √3
@@ -1536,7 +1668,7 @@ All Rational Numbers and Irrational Numbers together are called Real Numbers.
 
 </p>
 
-<pre>
+<pre style="color:var(--text-dark);">
 
 Real Numbers
 
@@ -1558,7 +1690,7 @@ Every Real Number can be represented on a Number Line.
 
 </p>
 
-<pre>
+<pre style="color:var(--text-dark);">
 
 ←────|────|────|────|────→
 
@@ -1572,7 +1704,7 @@ Every Real Number can be represented on a Number Line.
 
 <h4><i class="fa-solid fa-sitemap"></i> Classification of Numbers</h4>
 
-<pre>
+<pre style="color:var(--text-dark);">
 
           Real Numbers
 
@@ -1818,7 +1950,30 @@ Natural Numbers
         document.addEventListener("DOMContentLoaded", () => {
             initializeDashboardContexts();
             renderDynamicFormulasAccordion();
+
+            // Auto initialize theme if saved previously
+            if (localStorage.getItem('app-theme') === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                const toggleIcon = document.querySelector('#theme-toggle-btn i');
+                toggleIcon.className = 'fa-solid fa-sun';
+            }
         });
+
+        // App Theme Toggle Mechanics
+        function toggleAppTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const toggleIcon = document.querySelector('#theme-toggle-btn i');
+
+            if (currentTheme === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                toggleIcon.className = 'fa-solid fa-moon';
+                localStorage.setItem('app-theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                toggleIcon.className = 'fa-solid fa-sun';
+                localStorage.setItem('app-theme', 'dark');
+            }
+        }
 
         // Loop inject core NCERT chapters cleanly to Home Stack
         function initializeDashboardContexts() {
@@ -1989,12 +2144,6 @@ Natural Numbers
             document.getElementById("view-chapters").classList.add("active-view");
         }
 
-        function unmountDetailContext() {
-            document.getElementById("view-standalone-details").style.display = 'none';
-            document.getElementById("app-global-header").style.display = 'flex';
-            document.getElementById("view-chapters").classList.add("active-view");
-        }
-
         // PWA Installation & Service Worker Logic
         let deferredPrompt;
         const installModal = document.getElementById('pwa-install-modal');
@@ -2036,8 +2185,6 @@ Natural Numbers
             console.log('Muskan\'s Maths added to system successfully.');
             installModal.style.display = 'none';
         });
-
-        
     </script>
 </body>
 
