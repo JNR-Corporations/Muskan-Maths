@@ -1,6 +1,6 @@
 {
   "id": "/",
-  "name": "Muskan's Maths",
+  "name": "Muskaan's Maths",
   "short_name": "Maths",
   "description": "Premium Mathematics Learning Platform for Class 9 students featuring interactive chapters, formulas, solved examples, practice questions, quizzes, progress tracking, offline learning and regular content updates.",
 
@@ -41,44 +41,8 @@
 
   "icons": [
     {
-      "src": "logo72.png",
-      "sizes": "72x72",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "logo96.png",
-      "sizes": "96x96",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "logo128.png",
-      "sizes": "128x128",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "logo144.png",
-      "sizes": "144x144",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "logo152.png",
-      "sizes": "152x152",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
       "src": "logo192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "logo384.png",
-      "sizes": "384x384",
       "type": "image/png",
       "purpose": "any"
     },
@@ -87,49 +51,6 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
-    },
-    {
-      "src": "logo512-maskable.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "logo512-maskable.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "monochrome"
-    }
-  ],
-
-  "screenshots": [
-    {
-      "src": "screenshots/home.png",
-      "sizes": "1080x1920",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Home Screen"
-    },
-    {
-      "src": "screenshots/chapter.png",
-      "sizes": "1080x1920",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Interactive Chapter"
-    },
-    {
-      "src": "screenshots/formulas.png",
-      "sizes": "1080x1920",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Formula Vault"
-    },
-    {
-      "src": "screenshots/practice.png",
-      "sizes": "1080x1920",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Practice Questions"
     }
   ],
 
@@ -138,49 +59,25 @@
       "name": "Study Chapters",
       "short_name": "Chapters",
       "description": "Browse all chapters",
-      "url": "/index.html#chapters",
-      "icons": [
-        {
-          "src": "shortcut-chapter.png",
-          "sizes": "192x192"
-        }
-      ]
+      "url": "/index.html#chapters"
     },
     {
       "name": "Formula Vault",
       "short_name": "Formula",
       "description": "Quick formulas",
-      "url": "/index.html#formulas",
-      "icons": [
-        {
-          "src": "shortcut-formula.png",
-          "sizes": "192x192"
-        }
-      ]
+      "url": "/index.html#formulas"
     },
     {
       "name": "Practice Questions",
       "short_name": "Practice",
       "description": "Solve questions",
-      "url": "/index.html#practice",
-      "icons": [
-        {
-          "src": "shortcut-practice.png",
-          "sizes": "192x192"
-        }
-      ]
+      "url": "/index.html#practice"
     },
     {
       "name": "Mock Test",
       "short_name": "Mock",
       "description": "Start mock test",
-      "url": "/index.html#mock",
-      "icons": [
-        {
-          "src": "shortcut-mock.png",
-          "sizes": "192x192"
-        }
-      ]
+      "url": "/index.html#mock"
     }
   ],
 
